@@ -1,58 +1,45 @@
-#include "Arduino.h"
 #include "RGB.h"
-
-//#define red_pin  11
-//#define green_pin 10
-//#define blue_pin 9
-#define red_pin  6
-#define green_pin 5
-#define blue_pin 3
-
-// define a function that lets you set the pins to the 
-void RGD::setPins(int red, int green, int blue){
-	
-	r= red;
-	b= blue;
-	g= green;
-}
-// define a function that lets you know what pins are currently set
-void RGD::getPins(){
-	
-	Serial.println(r);
-	Serial.print(',');
-	Serial.print(g);
-	Serial.print(',');
-	Serial.println(g);
+#include "Arduino.h"
+//TODO : DEFINE A FUNCTION TO DYNAMICALLY SET THE PWM PINS FOR THE RGB LED
+void RGB::setPins(int redP,int greenP,int blueP){
+	rp = redP;
+	gp = greenP;
+	bp = blueP;
 	
 }
 
+//TODO : DEFINE A FUNCTION THAT DISPLAYS WHICH PINS ARE CURRENTLY SET FOR USE
+void RGB::getPins(){
 
-void RGB::customColor(int red,int green, int blue){
-	r = red;
-	g = green;
-	b =blue;
-	
-	analogWrite(red_pin, r);
-	analogWrite(green_pin, g);
-	analogWrite(blue_pin, b);
+	Serial.println(rp);
+	Serial.print(gp);
+	Serial.print(bp);
 }
 
+//TODO : DEFINE A FUNCTION FOR THE COLOR RED
 void RGB::red(){
-	analogWrite(red_pin, 0);
-	analogWrite(green_pin, 255);
-	analogWrite(blue_pin, 255);
+	analogWrite(rp, 0);
+	analogWrite(gp, 255);
+	analogWrite(bp, 255);
 
 }
-
+//TODO : DEFINE A FUNCTION FOR THE COLOR GREEN
 void RGB::green(){
-	analogWrite(red_pin, 255);
-	analogWrite(green_pin, 255);
-	analogWrite(blue_pin, 0);
+	analogWrite(rp, 255);
+	analogWrite(gp, 255);
+	analogWrite(bp, 0);
 }
-
+//TODO : DEFINE A FUNCTION FOR THE COLOR BLUE
 void RGB::blue(){
-	analogWrite(red_pin, 255);
-	analogWrite(green_pin, 0);
-	analogWrite(blue_pin, 255);
+	analogWrite(rp, 255);
+	analogWrite(gp, 0);
+	analogWrite(bp, 255);
 
+}
+//TODO : DEFINE A FUNCTION THAT DEFINES A CUSTOM COLOR FOR CUSTOM R,G,B INPUTS
+void RGB::customColor(int red,int green,int blue){
+	analogWrite(rp, red);
+	analogWrite(gp, green);
+	analogWrite(bp, blue);
+	
 }
