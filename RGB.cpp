@@ -8,6 +8,24 @@
 #define green_pin 5
 #define blue_pin 3
 
+// define a function that lets you set the pins to the 
+void RGD::setPins(int red, int green, int blue){
+	
+	r= red;
+	b= blue;
+	g= green;
+}
+// define a function that lets you know what pins are currently set
+void RGD::getPins(){
+	
+	Serial.println(r);
+	Serial.print(',');
+	Serial.print(g);
+	Serial.print(',');
+	Serial.println(g);
+	
+}
+
 
 void RGB::customColor(int red,int green, int blue){
 	r = red;
