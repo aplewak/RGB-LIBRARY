@@ -11,9 +11,9 @@ void RGB::setPins(int redP,int greenP,int blueP){
 //TODO : DEFINE A FUNCTION THAT DISPLAYS WHICH PINS ARE CURRENTLY SET FOR USE
 void RGB::getPins(){
 
-	Serial.println(rp);
-	Serial.print(gp);
-	Serial.print(bp);
+// 	Serial.println(rp);
+// 	Serial.print(gp);
+// 	Serial.print(bp);
 }
 
 //TODO : DEFINE A FUNCTION FOR THE COLOR RED
